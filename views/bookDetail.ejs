@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include('styles') %>
+</head>
+<body>
+  <div class="container">
+    <h1 class="my-4">Book Details</h1>
+    <div class="card">
+      <div class="card-header">
+        <h2><%= book.title %></h2>
+      </div>
+      <div class="card-body">
+        <p><strong>ID:</strong> <%= book.id %></p>
+        <p><strong>Author:</strong> <%= book.author %></p>
+        <p><strong>Year Written:</strong> <%= book.year_written %></p>
+        <p><strong>Edition:</strong> <%= book.edition %></p>
+        <p><strong>Price:</strong> $<%= book.price %></p>
+      </div>
+    </div>
+    <a href="/ejs/books" class="btn btn-primary mt-4">Back to Books List</a>
+  </div>
+  <%- include('scripts') %>
+</body>
+</html>

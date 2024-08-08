@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include('styles') %>
+</head>
+<body>
+  <div class="container">
+    <h1 class="my-4">Books List</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">Year Written</th>
+          <th scope="col">Edition</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% books.forEach(book => { %>
+          <tr>
+            <th scope="row"><%= book.id %></th>
+            <td><a href="/ejs/books/<%= book.id %>"><%= book.title %></a></td>
+            <td><%= book.author %></td>
+            <td><%= book.year_written %></td>
+            <td><%= book.edition %></td>
+            <td>$<%= book.price %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <%- include('scripts') %>
+</body>
+</html>
